@@ -10,9 +10,9 @@ public class JILGameManager : MonoBehaviour {
 
 
 
-    List<string> questions = new List<string>() { "First Question" };
+    List<string> questions = new List<string>() { "First Question", "Second Question", "Third Question", "Fourth Question", "Fifth Question" };
 
-
+    public static int randomQuestion = -1;
 
 	// Use this for initialization
 	void Start ()
@@ -23,6 +23,15 @@ public class JILGameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		
-	}
+        if (randomQuestion == -1)
+        {
+            randomQuestion = Random.Range(0, 5);
+        }
+        
+        if (randomQuestion > -1)
+        {
+            GetComponent<TextMesh>().text = questions[randomQuestion];
+        }
+        //Debug.Log(questions [randomQuestion]);
+    }
 }
