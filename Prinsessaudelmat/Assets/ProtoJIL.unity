@@ -149,7 +149,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1388396725339004, guid: 3e14c35791657a9459100fd09ff0e99b, type: 2}
       propertyPath: m_Name
-      value: Answer (1)
+      value: Answer
       objectReference: {fileID: 0}
     - target: {fileID: 114246412710822384, guid: 3e14c35791657a9459100fd09ff0e99b,
         type: 2}
@@ -275,7 +275,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1388396725339004, guid: 3e14c35791657a9459100fd09ff0e99b, type: 2}
       propertyPath: m_Name
-      value: Answer (2)
+      value: Answer
       objectReference: {fileID: 0}
     - target: {fileID: 114246412710822384, guid: 3e14c35791657a9459100fd09ff0e99b,
         type: 2}
@@ -336,7 +336,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1388396725339004, guid: 3e14c35791657a9459100fd09ff0e99b, type: 2}
       propertyPath: m_Name
-      value: Answer (3)
+      value: Answer
       objectReference: {fileID: 0}
     - target: {fileID: 114246412710822384, guid: 3e14c35791657a9459100fd09ff0e99b,
         type: 2}
@@ -966,6 +966,11 @@ Prefab:
     - target: {fileID: 114246412710822384, guid: 3e14c35791657a9459100fd09ff0e99b,
         type: 2}
       propertyPath: AnswerNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61500539343982346, guid: 3e14c35791657a9459100fd09ff0e99b,
+        type: 2}
+      propertyPath: m_UsedByComposite
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

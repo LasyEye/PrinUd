@@ -8,22 +8,26 @@ public class JILAnswers : MonoBehaviour {
     //  By Joonas Luhtaniemi
 
     public int AnswerNumber;
+    //public static int sAnswerNumber;
     public int OrderNumber;
+    //public static int sOrderNumber = OrderNumber;
 
     public static bool answersEnabled = true;
-    public static bool RandomizeOn = false;
 
-    System.Random rnd = new System.Random();
+    //System.Random rnd = new System.Random();
 
     // Use this for initialization
     void Start()
     {
-        randomizeAnswerNumbers();
+        //sAnswerNumber = AnswerNumber;
+        //sOrderNumber = OrderNumber;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //AnswerNumber = sAnswerNumber;
+
         if (JILGameManager.randomQuestion > -1)
         {
             if (AnswerNumber == 1)
@@ -48,27 +52,9 @@ public class JILAnswers : MonoBehaviour {
         }
     }
 
-    public void randomizeAnswerNumbers()
+    public static void setAnswerNum()
     {
-        int rndStart;
-        rndStart = rnd.Next(1, 5);
 
-        //rndStart = UnityEngine.Random.Range(0, 5);
-
-        for (int i = 0; i < 5; i++)
-        {
-            if (rndStart == 5)
-            {
-                rndStart = 1;
-            }
-
-            if (OrderNumber == i)
-            {
-                AnswerNumber = rndStart;
-            }
-
-            rndStart += 1;
-        }
     }
 
     void OnMouseDown()

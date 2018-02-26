@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 61500539343982346}
   m_Layer: 0
   m_Name: Answer
-  m_TagString: Untagged
+  m_TagString: Answer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,3 +133,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnswerNumber: 1
+  OrderNumber: 0

@@ -21,6 +21,7 @@ public class JILNextQ : MonoBehaviour {
         if (nextEnabled == true)
         {
             nextEnabled = false;
+            JILRandomizeQ.randomAnsw();
             JILAnswers.answersEnabled = true;
             JILGameManager.randomQuestion = -1;
         }
