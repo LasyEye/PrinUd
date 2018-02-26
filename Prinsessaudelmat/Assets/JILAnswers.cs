@@ -5,18 +5,20 @@ using UnityEngine;
 
 public class JILAnswers : MonoBehaviour {
 
-    public int AnswerNumber = -1;
+    //  By Joonas Luhtaniemi
 
+    public int AnswerNumber;
+    public int OrderNumber;
 
+    public static bool answersEnabled = true;
+    public static bool RandomizeOn = false;
 
-    List<string> answer = new List<string>() { RightAnswer(), WrongAnswer1(), WrongAnswer2(), WrongAnswer3() };
-
-
+    System.Random rnd = new System.Random();
 
     // Use this for initialization
     void Start()
     {
-        //GetComponent<TextMesh>().text = answer[AnswerDealer()];
+        randomizeAnswerNumbers();
     }
 
     // Update is called once per frame
@@ -24,60 +26,131 @@ public class JILAnswers : MonoBehaviour {
     {
         if (JILGameManager.randomQuestion > -1)
         {
-            GetComponent<TextMesh>().text = answer[JILGameManager.randomQuestion];
+            if (AnswerNumber == 1)
+            {
+                GetComponent<TextMesh>().text = RightAnswer();
+            }
+
+            if (AnswerNumber == 2)
+            {
+                GetComponent<TextMesh>().text = WrongAnswer1();
+            }
+
+            if (AnswerNumber == 3)
+            {
+                GetComponent<TextMesh>().text = WrongAnswer2();
+            }
+
+            if (AnswerNumber == 4)
+            {
+                GetComponent<TextMesh>().text = WrongAnswer3();
+            }
         }
     }
 
+    public void randomizeAnswerNumbers()
+    {
+        int rndStart;
+        rndStart = rnd.Next(1, 5);
 
+        //rndStart = UnityEngine.Random.Range(0, 5);
+
+        for (int i = 0; i < 5; i++)
+        {
+            if (rndStart == 5)
+            {
+                rndStart = 1;
+            }
+
+            if (OrderNumber == i)
+            {
+                AnswerNumber = rndStart;
+            }
+
+            rndStart += 1;
+        }
+    }
+
+    void OnMouseDown()
+    {
+        if (answersEnabled == true)
+        {
+            JILGameManager.selectedAnswer = AnswerNumber.ToString();
+            JILGameManager.choiseDone = "y";
+        }
+        
+        if (JILGameManager.selectedAnswer == "1")
+        {
+            answersEnabled = false;
+        }
+    }
 
     private static string RightAnswer()
     {
-        return "right1";
+        List<string> option = new List<string>() {
+            //  1
+            "Right1",
+            //  2
+            "Right2",
+            //  3
+            "Right3",
+            //  4
+            "Right4",
+            //  5
+            "Right5"
+        };
+        return option[JILGameManager.randomQuestion];
     }
 
     private static string WrongAnswer1()
     {
-        return "wrong1";
+        List<string> option = new List<string>() {
+            //  1
+            "Wrong21", 
+            //  2
+            "Wrong22", 
+            //  3
+            "Wrong23", 
+            //  4
+            "Wrong24", 
+            //  5
+            "Wrong25",
+        };
+        return option[JILGameManager.randomQuestion];
     }
 
     private static string WrongAnswer2()
     {
-        return "wrong2";
+        List<string> option = new List<string>() {
+            //  1
+            "Wrong31", 
+            //  2
+            "Wrong32", 
+            //  3
+            "Wrong33", 
+            //  4
+            "Wrong34", 
+            //  5
+            "Wrong35",
+        };
+        return option[JILGameManager.randomQuestion];
     }
 
     private static string WrongAnswer3()
     {
-        return "wrong3";
+        List<string> option = new List<string>() {
+            //  1
+            "Wrong41", 
+            //  2
+            "Wrong42", 
+            //  3
+            "Wrong43", 
+            //  4
+            "Wrong44", 
+            //  5
+            "Wrong45",
+        };
+        return option[JILGameManager.randomQuestion];
     }
 
-
-    /*
-    private int AnswerDealer()
-    {
-        int AnswerOption = -1;
-
-        if (AnswerNumber == 1)
-        {
-            AnswerOption = 0;
-        }
-        else if (AnswerNumber == 2)
-        {
-            AnswerOption = 1;
-        }
-        else if (AnswerNumber == 3)
-        {
-            AnswerOption = 2;
-        }
-        else if (AnswerNumber == 4)
-        {
-            AnswerOption = 3;
-        }
-        else
-        {
-            Debug.Log("Answer dealer error!");
-        }
-
-        return AnswerOption;
-    }
-    */
 }
