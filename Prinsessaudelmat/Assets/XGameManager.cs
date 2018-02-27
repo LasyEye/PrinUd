@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JILGameManager : MonoBehaviour {
-
-    //  By Joonas Luhtaniemi
+public class XGameManager : MonoBehaviour {
 
     List<string> questions = new List<string>() {
         //  1
@@ -18,10 +16,6 @@ public class JILGameManager : MonoBehaviour {
         //  5
         "Fifth Question"
     };
-
-    private static List<string> unansweredQuestions;
-
-    private string currentQuestion;
 
     List<string> rightAnswers = new List<string>() {
         //  1
@@ -50,30 +44,32 @@ public class JILGameManager : MonoBehaviour {
 
     public Transform scoreObj;
 
-	// Use this for initialization
-	void Start ()
-    {
+    //private static List<string> unansweredQuestions;
+
+    // Use this for initialization
+    void Start () {
+
         GetComponent<TextMesh>().text = questions[0];
 
+        /*
         if (unansweredQuestions == null || unansweredQuestions.Count == 0)
         {
             unansweredQuestions = questions;
         }
-	}
+        */
+    }
 	
 	// Update is called once per frame
-	void Update ()
-    {
+	void Update () {
 
         if (randomQuestion == -1)
         {
-            randomQuestion = Random.Range(0, unansweredQuestions.Count);
-            currentQuestion = unansweredQuestions[randomQuestion];
+            randomQuestion = Random.Range(0, questions.Count);    // alt.max: unansweredQuestions.Count
             GetComponent<TextMesh>().text = questions[randomQuestion];
             rightAnswer = rightAnswers[randomQuestion];
-            JILAnswers.setAnswers = true;
+            //XAnswers.setAnswers = true;
         }
-        
+
         if (choiseDone == "y")
         {
             choiseDone = "n";
@@ -83,7 +79,7 @@ public class JILGameManager : MonoBehaviour {
                 score += 1;
                 resultObj.GetComponent<TextMesh>().text = "Correct!";
                 scoreObj.GetComponent<TextMesh>().text = score.ToString();
-                JILNextQ.nextEnabled = true;
+                XNext.nextEnabled = true;
             }
             else
             {
@@ -97,8 +93,10 @@ public class JILGameManager : MonoBehaviour {
         }
     }
 
+    /*
     public static void RemoveFromList()
     {
         unansweredQuestions.RemoveAt(randomQuestion);
     }
+    */
 }

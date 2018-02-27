@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JILAnswers : MonoBehaviour {
-
-    //  By Joonas Luhtaniemi
+public class XAnswers : MonoBehaviour {
 
     List<string> option1 = new List<string>()
     {
@@ -60,23 +57,26 @@ public class JILAnswers : MonoBehaviour {
         "Wrong4-5",
     };
 
-    private static List<string> UNoption1;
+    /*
+     private static List<string> UNoption1;
 
     private static List<string> UNoption2;
 
     private static List<string> UNoption3;
 
     private static List<string> UNoption4;
+    */
 
     public int AnswerNumber;
 
     public static bool answersEnabled = true;
 
-    public static bool setAnswers = false;
+    //public static bool setAnswers = false;
 
     // Use this for initialization
-    void Start()
-    {
+    void Start () {
+
+        /*
         if (UNoption1 == null || UNoption1.Count == 0)
         {
             UNoption1 = option1;
@@ -96,11 +96,13 @@ public class JILAnswers : MonoBehaviour {
         {
             UNoption4 = option4;
         }
+        */
     }
+	
+	// Update is called once per frame
+	void Update () {
 
-    // Update is called once per frame
-    void Update()
-    {
+        /*
         if (setAnswers == true)
         {
             if (AnswerNumber == 1)
@@ -123,8 +125,10 @@ public class JILAnswers : MonoBehaviour {
                 GetComponent<TextMesh>().text = option4[JILGameManager.randomQuestion];
             }
         }
+        */
     }
 
+    /*
     public static void RemoveFromLists()
     {
         int eraser = JILGameManager.randomQuestion;
@@ -133,16 +137,17 @@ public class JILAnswers : MonoBehaviour {
         UNoption3.RemoveAt(eraser);
         UNoption4.RemoveAt(eraser);
     }
+    */
 
     void OnMouseDown()
     {
         if (answersEnabled == true)
         {
-            JILGameManager.selectedAnswer = AnswerNumber.ToString();
-            JILGameManager.choiseDone = "y";
+            XGameManager.selectedAnswer = AnswerNumber.ToString();
+            XGameManager.choiseDone = "y";
         }
 
-        if (JILGameManager.selectedAnswer == JILGameManager.rightAnswer)
+        if (XGameManager.selectedAnswer == XGameManager.rightAnswer)
         {
             answersEnabled = false;
         }
