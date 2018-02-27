@@ -28,7 +28,7 @@ public class XAnswers : MonoBehaviour {
         //  4
         "Wrong2-4", 
         //  5
-        "Wrong2-5",
+        "Wrong2-5"
     };
 
     List<string> option3 = new List<string>() {
@@ -41,7 +41,7 @@ public class XAnswers : MonoBehaviour {
         //  4
         "Wrong3-4", 
         //  5
-        "Wrong3-5",
+        "Wrong3-5"
     };
 
     List<string> option4 = new List<string>() {
@@ -54,7 +54,7 @@ public class XAnswers : MonoBehaviour {
         //  4
         "Wrong4-4", 
         //  5
-        "Wrong4-5",
+        "Wrong4-5"
     };
 
     /*
@@ -71,7 +71,7 @@ public class XAnswers : MonoBehaviour {
 
     public static bool answersEnabled = true;
 
-    //public static bool setAnswers = false;
+    public static bool setAnswers = false;
 
     // Use this for initialization
     void Start () {
@@ -102,30 +102,28 @@ public class XAnswers : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        /*
         if (setAnswers == true)
         {
             if (AnswerNumber == 1)
             {
-                GetComponent<TextMesh>().text = option1[JILGameManager.randomQuestion];
+                GetComponent<TextMesh>().text = option1[XGameManager.randomQuestion];
             }
 
             if (AnswerNumber == 2)
             {
-                GetComponent<TextMesh>().text = option2[JILGameManager.randomQuestion];
+                GetComponent<TextMesh>().text = option2[XGameManager.randomQuestion];
             }
 
             if (AnswerNumber == 3)
             {
-                GetComponent<TextMesh>().text = option3[JILGameManager.randomQuestion];
+                GetComponent<TextMesh>().text = option3[XGameManager.randomQuestion];
             }
 
             if (AnswerNumber == 4)
             {
-                GetComponent<TextMesh>().text = option4[JILGameManager.randomQuestion];
+                GetComponent<TextMesh>().text = option4[XGameManager.randomQuestion];
             }
         }
-        */
     }
 
     /*

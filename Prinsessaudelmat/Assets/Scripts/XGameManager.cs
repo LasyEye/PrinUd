@@ -67,7 +67,7 @@ public class XGameManager : MonoBehaviour {
             randomQuestion = Random.Range(0, questions.Count);    // alt.max: unansweredQuestions.Count
             GetComponent<TextMesh>().text = questions[randomQuestion];
             rightAnswer = rightAnswers[randomQuestion];
-            //XAnswers.setAnswers = true;
+            XAnswers.setAnswers = true;
         }
 
         if (choiseDone == "y")
@@ -80,6 +80,7 @@ public class XGameManager : MonoBehaviour {
                 resultObj.GetComponent<TextMesh>().text = "Correct!";
                 scoreObj.GetComponent<TextMesh>().text = score.ToString();
                 XNext.nextEnabled = true;
+                StartCoroutine(TalkReset());
             }
             else
             {
@@ -89,8 +90,15 @@ public class XGameManager : MonoBehaviour {
                 }
                 resultObj.GetComponent<TextMesh>().text = "Wrong...";
                 scoreObj.GetComponent<TextMesh>().text = score.ToString();
+                StartCoroutine(TalkReset());
             }
         }
+    }
+
+    private IEnumerator TalkReset()
+    {
+        yield return new WaitForSeconds(2);
+        resultObj.GetComponent<TextMesh>().text = "...";
     }
 
     /*
