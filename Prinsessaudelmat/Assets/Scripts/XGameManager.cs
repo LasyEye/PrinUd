@@ -6,29 +6,37 @@ public class XGameManager : MonoBehaviour {
 
     List<string> questions = new List<string>() {
         //  1
-        "First Question",
+        @"What is the knights
+greatest quality?",
         //  2
-        "Second Question",
+        @"Are you wealthy?",
         //  3
-        "Third Question",
+        @"Do you own a horse?",
         //  4
-        "Fourth Question",
+        @"What would you request
+as a reward for saving me?",
         //  5
-        "Fifth Question"
+        @"What is your name?"
     };
 
     List<string> rightAnswers = new List<string>() {
         //  1
-        "1",
+        "4",
         //  2
-        "1",
+        "3",
         //  3
-        "1",
+        "3",
         //  4
         "1",
         //  5
-        "1"
+        "2"
     };
+
+    public static List<int> unansweredQuestionNumbers = new List<int>() {
+        0, 1, 2, 3, 4,
+    };
+
+    public static int randomListNum;
 
     public static int score = 0;
 
@@ -64,7 +72,9 @@ public class XGameManager : MonoBehaviour {
 
         if (randomQuestion == -1)
         {
-            randomQuestion = Random.Range(0, questions.Count);    // alt.max: unansweredQuestions.Count
+            randomListNum = Random.Range(0, unansweredQuestionNumbers.Count);
+            //randomQuestion = Random.Range(0, questions.Count);    // alt.max: unansweredQuestions.Count
+            randomQuestion = unansweredQuestionNumbers[randomListNum];
             GetComponent<TextMesh>().text = questions[randomQuestion];
             rightAnswer = rightAnswers[randomQuestion];
             XAnswers.setAnswers = true;
@@ -77,7 +87,7 @@ public class XGameManager : MonoBehaviour {
             if (selectedAnswer == rightAnswer)
             {
                 score += 1;
-                resultObj.GetComponent<TextMesh>().text = "Correct!";
+                resultObj.GetComponent<TextMesh>().text = "Lovely!";
                 scoreObj.GetComponent<TextMesh>().text = score.ToString();
                 XNext.nextEnabled = true;
                 StartCoroutine(TalkReset());
@@ -88,7 +98,7 @@ public class XGameManager : MonoBehaviour {
                 {
                     score -= 1;
                 }
-                resultObj.GetComponent<TextMesh>().text = "Wrong...";
+                resultObj.GetComponent<TextMesh>().text = "Hmmm...";
                 scoreObj.GetComponent<TextMesh>().text = score.ToString();
                 StartCoroutine(TalkReset());
             }
@@ -99,6 +109,11 @@ public class XGameManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(2);
         resultObj.GetComponent<TextMesh>().text = "...";
+    }
+
+    public static void RemoveNumberFromList()
+    {
+        unansweredQuestionNumbers.RemoveAt(randomListNum);
     }
 
     /*

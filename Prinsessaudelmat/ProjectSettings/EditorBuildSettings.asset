@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Prinsessaudelmat.unity
+    guid: a45b8249b296a5d4e9bc74b26e0de953
+  - enabled: 1
+    path: Assets/End.unity
+    guid: a100a73617bdb954997ea3f57047ec39

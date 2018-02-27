@@ -7,54 +7,56 @@ public class XAnswers : MonoBehaviour {
     List<string> option1 = new List<string>()
     {
         //  1
-        "Right1-1",
+        @"Bravery!",
         //  2
-        "Right1-2",
+        @"Yes.",
         //  3
-        "Right1-3",
+        @"I have a donkey...",
         //  4
-        "Right1-4",
+        @"Your hand.",
         //  5
-        "Right1-5"
+        @"Ser Bob."
     };
 
     List<string> option2 = new List<string>() {
         //  1
-        "Wrong2-1", 
+        @"His wits.", 
         //  2
-        "Wrong2-2", 
+        @"No.", 
         //  3
-        "Wrong2-3", 
+        @"Multiple.", 
         //  4
-        "Wrong2-4", 
+        @"Your leg.", 
         //  5
-        "Wrong2-5"
+        @"Ser Bo*COUGH* Percival."
     };
 
     List<string> option3 = new List<string>() {
         //  1
-        "Wrong3-1", 
+        @"Strength!!!", 
         //  2
-        "Wrong3-2", 
+        @"Extremely.", 
         //  3
-        "Wrong3-3", 
+        @"Yes, and it is sooo cute!",
         //  4
-        "Wrong3-4", 
+        @"Your head.", 
         //  5
-        "Wrong3-5"
+        @"Ser Bo*COUGH* Tom... Damn..."
     };
 
     List<string> option4 = new List<string>() {
         //  1
-        "Wrong4-1", 
+        @"Long sword. ;)", 
         //  2
-        "Wrong4-2", 
+        @"Some day I will be...", 
         //  3
-        "Wrong4-3", 
+        @"I repeatedly hit
+coconut halves together.", 
         //  4
-        "Wrong4-4", 
+        @"Dat posterior.", 
         //  5
-        "Wrong4-5"
+        @"Ser Bo*COUGH...COUGH! COUGH!*
+*Wheeeeeze...*"
     };
 
     /*
